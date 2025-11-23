@@ -1,0 +1,64 @@
+{
+  "name": "Provérbios do Dia",
+  "short_name": "Provérbios",
+  "description": "Receba notificações diárias para ler um capítulo de Provérbios.",
+  "start_url": "/index.html",
+  "display": "fullscreen",
+  "background_color": "#FFFAF0",
+  "theme_color": "#D4AF37",
+  "icons": [
+    {
+      "src": "logo-bible.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "logo-bible.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/maskable_icon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "icons/maskable_icon_x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "icons/monochrome_icon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "monochrome"
+    },
+    {
+      "src": "icons/monochrome_icon_x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "monochrome"
+    }
+  ],
+  "lang": "pt",
+  "orientation": "any",
+  "display_override": [
+    "fullscreen",
+    "standalone",
+    "window-controls-overlay"
+  ],
+  "categories": [
+    "books",
+    "entertainment"
+  ],
+  "id": "com.proverbios.jeiel",
+  "screenshots": [
+    {
+      "src": "Prov_screen.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "platform": "wide"
+    }]
+}
