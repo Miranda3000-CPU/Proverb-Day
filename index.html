@@ -524,7 +524,7 @@
 </head>
 <script>
     if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('/service-worker.js')
+        navigator.serviceWorker.register('./service-worker.js')
             .then(reg => console.log('Service Worker registrado:', reg.scope))
             .catch(err => console.error('Erro ao registrar Service Worker:', err));
     }
@@ -1650,6 +1650,10 @@ async function loadVerses() {
         observeLastVerse();
     } catch (error) {
         console.error('Erro ao carregar versículos:', error);
+        const versesContainer = document.getElementById('verses');
+        if (versesContainer) {
+            versesContainer.textContent = 'Não foi possível carregar os versículos. Atualize a página e tente novamente.';
+        }
     }
 }
 
@@ -1664,7 +1668,21 @@ function observeLastVerse() {
     }
 }
 
-window.onload = loadVerses;
+function initializeDailyChapter() {
+    const versesContainer = document.getElementById('verses');
+    if (!versesContainer) {
+        console.error('Container de versículos não encontrado.');
+        return;
+    }
+    versesContainer.replaceChildren();
+    loadVerses();
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeDailyChapter, { once: true });
+} else {
+    initializeDailyChapter();
+}
 
 let speechUtterance = null;
 let isPlaying = false;
